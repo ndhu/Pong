@@ -1,0 +1,63 @@
+	/*
+				var checkObjectContraints = function(sprite, rect, impulse) {
+					var top = rect.top,
+						left = rect.left,
+						bottom = rect.bottom,
+						right = rect.right;
+						imp = impulse || 0;
+
+					if (sprite.y < top) {
+						sprite.y = top;
+						sprite.vy *= -imp;
+					} else if ((sprite.y + sprite.h) > bottom) {
+						sprite.y = bottom-sprite.h;
+						sprite.vy *= -imp;
+					} else if ((sprite.x + sprite.w) > right) {
+						sprite.x = (right - sprite.w);
+						sprite.vx *= -imp;
+					} else if (sprite.x < left) {
+						sprite.x = left;
+						sprite.vx *= -imp;
+					}
+				}
+				var rect = {top: 0,
+							left: 0,
+							right: game.w,
+							bottom: game.h
+							};
+
+				//checkObjectContraints(goh.ball, rect, 1);
+				
+
+				var intersects = function (ball, paddle)
+				{
+				    var dx = Math.abs(ball.x - paddle.x);
+				    var dy = Math.abs(ball.y - paddle.y);
+
+				    if (dx > (paddle.w/2 + ball.r)) { 
+				    	return false; 
+				    }
+				    if (dy > (paddle.h/2 + ball.r)) { 
+				    	return false; 
+				    }
+
+				    if (dx <= (paddle.w/2) && dy <= (paddle.h/2)) { 
+				    	return true; 
+				    }
+
+				    cornerDistance_sq = Math.pow(dx - paddle.w/2, 2) + Math.pow(dy - paddle.h/2, 2);
+
+				    return (cornerDistance_sq <= Math.pow(ball.r, 2));
+				}
+				var hit = intersects(goh.ball, goh.paddleHome);
+				if (hit) {
+					this.homeScore++;
+					goh.ball.vx *= -1;
+				}
+				hit = intersects(goh.ball, goh.paddleAway);
+				if (hit) {
+					this.awayScore++;
+					goh.ball.x -= goh.ball.vx;
+					goh.ball.vx *= -1;
+				}
+				*/

@@ -1,0 +1,214 @@
+/* line 24, ../sass/pong.scss */
+body {
+  font-size: 12px;
+  font-family: Arial, sans;
+}
+
+/* line 29, ../sass/pong.scss */
+#container {
+  margin: 100px auto;
+  width: 600px;
+}
+
+/* line 34, ../sass/pong.scss */
+.screen {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-color: #333333;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+/* line 43, ../sass/pong.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 47, ../sass/pong.scss */
+.splash {
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #ffdc36;
+  display: none;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s false;
+}
+/* line 59, ../sass/pong.scss */
+.splash h3, .splash h4 {
+  display: block;
+  color: #ffe569;
+  text-align: center;
+  width: 600px;
+  margin: 100px auto 32px auto;
+}
+/* line 67, ../sass/pong.scss */
+.splash.hidden {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 74, ../sass/pong.scss */
+#cover, #gameOver {
+  display: block;
+}
+/* line 76, ../sass/pong.scss */
+#cover h3, #gameOver h3 {
+  font-family: Impact;
+  font-weight: 800;
+  font-size: 128px;
+  text-shadow: rgba(255, 204, 38, 0.15) 0px 3px 1px, rgba(255, 204, 38, 0.75) 0px 5px 6px;
+}
+/* line 84, ../sass/pong.scss */
+#cover h4, #gameOver h4 {
+  margin-top: 32px;
+  font-size: 32px;
+}
+/* line 89, ../sass/pong.scss */
+#cover.startUp, #gameOver.startUp {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 94, ../sass/pong.scss */
+#instructions {
+  display: block;
+  background-color: transparent;
+}
+/* line 97, ../sass/pong.scss */
+#instructions h3 {
+  color: #333333;
+  margin: auto;
+  width: auto;
+  font-size: 12px;
+}
+/* line 103, ../sass/pong.scss */
+#instructions span.key {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: #333333 0 1px 1px, rgba(51, 51, 51, 0.75) 0 4px 2px, rgba(51, 51, 51, 0.15) 0 0 1px 1px inset;
+  -moz-box-shadow: #333333 0 1px 1px, rgba(51, 51, 51, 0.75) 0 4px 2px, rgba(51, 51, 51, 0.15) 0 0 1px 1px inset;
+  box-shadow: #333333 0 1px 1px, rgba(51, 51, 51, 0.75) 0 4px 2px, rgba(51, 51, 51, 0.15) 0 0 1px 1px inset;
+  color: #777777;
+  display: block;
+  font-size: 13px;
+  height: 23px;
+  margin: 3px auto;
+  padding: 2px;
+  text-align: center;
+  width: 23px;
+}
+/* line 119, ../sass/pong.scss */
+#instructions #player1Controls, #instructions #player2Controls {
+  position: absolute;
+  top: 270px;
+}
+/* line 124, ../sass/pong.scss */
+#instructions #player1Controls {
+  left: 100px;
+}
+/* line 128, ../sass/pong.scss */
+#instructions #player2Controls {
+  right: 100px;
+}
+/* line 132, ../sass/pong.scss */
+#instructions #playButton {
+  display: block;
+  margin: 280px auto;
+  width: 100px;
+  font-size: 18px;
+}
+/* line 139, ../sass/pong.scss */
+#instructions.startUp {
+  top: 400px;
+}
+
+/* line 144, ../sass/pong.scss */
+#gameOver {
+  display: none;
+  background-color: #dd5555;
+}
+/* line 148, ../sass/pong.scss */
+#gameOver h3 {
+  color: #e67f7f;
+  text-shadow: rgba(221, 85, 85, 0.25) -1px 0px 1px, rgba(221, 85, 85, 0.25) 1px 0px 1px;
+  font-size: 72px;
+  font-weight: 100;
+}
+/* line 154, ../sass/pong.scss */
+#gameOver h4 {
+  color: #f7d4d4;
+  font-size: 14px;
+  margin-top: 12px;
+}
+/* line 159, ../sass/pong.scss */
+#gameOver #replayButton {
+  color: #951e1e;
+  background-color: #e67f7f;
+  border: 1px solid #dd5555;
+  display: block;
+  margin: 0px auto;
+  width: 140px;
+  font-size: 18px;
+}
+/* line 168, ../sass/pong.scss */
+#gameOver #replayButton:hover {
+  background-color: #eeaaaa;
+}
+
+/* line 174, ../sass/pong.scss */
+.canvas {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* line 181, ../sass/pong.scss */
+.controls {
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px / 5px;
+  -ms-border-radius: 5px / 5px;
+  -o-border-radius: 5px / 5px;
+  border-radius: 5px / 5px;
+}
+
+/* line 189, ../sass/pong.scss */
+input, select {
+  color: #b3b3b3;
+  padding: 10px;
+  background-color: #333333;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px / 5px;
+  -ms-border-radius: 5px / 5px;
+  -o-border-radius: 5px / 5px;
+  border-radius: 5px / 5px;
+  border: 1px solid #1a1a1a;
+  width: 120px;
+}
+/* line 196, ../sass/pong.scss */
+input:hover, select:hover {
+  background-color: #4d4d4d;
+  border: 1px solid #666666;
+}
+
+/* line 202, ../sass/pong.scss */
+input[type='button'] {
+  cursor: pointer;
+}

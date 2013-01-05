@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pong Evaluation</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/pong.css" ></link>
+	<script type="text/javascript" src="scripts/pong.js" ></script> 
+</head>
+
+<body onLoad="ready();">
+
+	<div id="container">
+		<a name="pong"></a>
+		<h1>PONG</h1>
+		<div class="screen">
+			
+			<div id="cover" class="splash startUp">
+				<h3>PONG</h3>
+			</div>
+			
+			<div id="gameOver" class="splash">
+				<h3>GAME OVER</h3>
+				<h4>{#}</h4>
+				<input id="replayButton" type="button" value="Once more!" />
+			</div>
+
+			<div id="instructions" class="splash startUp">
+				<div id="player1Controls">
+					<h3>PLAYER 1</h3>
+					<span class="key">q</span>
+					<span class="key">a</span>
+				</div>
+				<div id="player2Controls">
+					<h3>PLAYER 2</h3>
+					<span class="key">p</span>
+					<span class="key">l</span>
+				</div>
+				<input id="playButton" type="button" value="PLAY!" />
+			</div>
+
+			<canvas class="canvas" width="600" height="400">
+				Gönnen Sie sich einen modernen Browser. Pong finden in Ihrem aktuellen Browser keinen Platz.
+			</canvas>
+		</div>
+		<div class="controls">
+			<input id="resetButton" type="button" class="button" value="Reset"></input>
+			<select id="aiSelect">
+				<option value="0">Player 2</option>
+				<option value="Unbeatable">Unbeatable</option>
+				<option value="Drunk">Drunk</option>
+				<option value="Nervous">Nervous</option>
+				<option value="Phobic">Phobic</option>
+			</select>
+		</div>
+
+	</diV>
+
+	<audio src="sounds/sound1.ogg" ></audio>
+	<audio src="sounds/sound2.ogg" ></audio>
+	<audio src="sounds/sound3.ogg" ></audio>
+	<audio src="sounds/sound4.ogg" ></audio>
+
+	<script type="text/javascript">
+		var ready = function() {
+			var canvas = document.getElementsByClassName("canvas")[0];
+			AH.Pong.init(canvas);
+		}
+	</script>
+
+</body>
+</html>

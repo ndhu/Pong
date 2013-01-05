@@ -1,0 +1,204 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
+
+
+$color0: #333;
+$color1: #FFCC26;
+$color2: #FFDC36;
+$color3: #f5f5f5;
+$color4: #d55;
+$color5: #333;
+
+
+$controlWidth: 120px;
+
+$screenWidth: 600px;
+$screenHeight: 400px;
+
+body {
+	font-size: 12px;
+	font-family: Arial, sans;
+}
+
+#container {
+	margin: 100px auto;
+	width: 600px;
+}
+
+.screen {
+	position: relative;
+	width: $screenWidth;
+	height: $screenHeight;
+	background-color: $color0;
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+.splash {
+	position: absolute;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: $color2;
+	display: none;
+	@include single-transition (all, 1s); 
+
+	h3, h4 {
+		display: block;
+		color: lighten($color2, 10%);
+		text-align: center;
+		width: $screenWidth;
+		margin: $screenHeight/4 auto 32px auto;
+	}
+
+	&.hidden {
+		@include opacity(0);
+	}
+
+	
+}
+
+#cover, #gameOver {
+	display: block;
+	h3 {
+
+		font-family: Impact;
+		font-weight: 800;
+		font-size: 128px;
+		@include text-shadow(rgba($color1, .15) 0px 3px 1px, rgba($color1, .75) 0px 5px 6px);
+	}
+
+	h4 {
+		margin-top: 32px;
+		font-size: 32px;
+	}
+
+	&.startUp {
+		@include opacity(0);
+	}
+}
+
+#instructions {
+	display: block;
+	background-color: transparent;
+	h3 {
+		color: $color0;
+		margin: auto;
+		width: auto;
+		font-size: 12px;
+	}
+	span.key {
+		@include box-sizing(border-box);
+	    background-color: #EEEEEE;
+	    border: 1px solid #EEEEEE;
+	    border-radius: 5px 5px 5px 5px;
+	    @include box-shadow (rgba($color0, 1) 0 1px 1px, rgba($color0, 0.75) 0 4px 2px, rgba($color0, 0.15) 0 0 1px 1px inset);
+	    color: #777777;
+	    display: block;
+	    font-size: 13px;
+	    height: 23px;
+	    margin: 3px auto;
+	    padding: 2px;
+	    text-align: center;
+	    width: 23px;
+	}
+
+	#player1Controls, #player2Controls {
+		position: absolute;
+		top: 270px; 
+	}
+
+	#player1Controls {
+		left: 100px;
+	}
+
+	#player2Controls {
+		right: 100px;
+	}
+
+	#playButton {
+		display: block;
+		margin: 280px auto;
+		width: 100px;
+		font-size: 18px;
+	}
+
+	&.startUp {
+		top: $screenHeight;
+	}
+}
+
+#gameOver {
+	display: none;
+	background-color: $color4;
+
+	h3 {
+		color: lighten($color4, 10%);
+		@include text-shadow(rgba($color4, .25) -1px 0px 1px, rgba($color4, .25) 1px 0px 1px);
+		font-size: 72px;
+		font-weight: 100;
+	}
+	h4 {
+		color: lighten($color4, 30%);
+		font-size: 14px;
+		margin-top: 12px;
+	}
+	#replayButton {
+		color: darken($color4, 25%);
+		background-color: lighten($color4, 10%);
+		border: 1px solid $color4;
+		display: block;
+		margin: 0px auto;
+		width: 140px;
+		font-size: 18px;
+
+		&:hover {
+			background-color: lighten($color4, 20%);
+		}
+	}
+}
+
+.canvas {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.controls {
+	margin: 10px 0px;
+	padding: 10px;
+	background-color: $color3;
+	border: 1px solid darken($color3, 5%);
+	@include border-radius (5px, 5px);
+}
+
+input, select {
+	color: lighten($color5, 50%);
+	padding: 10px;
+	background-color: $color5;
+	@include border-radius (5px, 5px);
+	border: 1px solid darken($color5, 10%);
+	width: $controlWidth;
+	&:hover {
+		background-color: lighten($color5, 10%);
+		border: 1px solid lighten($color5, 20%);
+	}
+}
+
+input[type='button'] {
+	cursor: pointer;
+}
